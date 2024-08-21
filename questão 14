@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+
+int main() {
+   
+    setlocale(LC_ALL,"Portuguese");
+   
+    int numero, numeroOriginal,reversoN;
+
+    printf("Digite o número:");
+    scanf("%d",&numero);
+    
+     numeroOriginal = numero;
+     
+     bool negativo = (numero < 0);
+     if (negativo){
+     		numero = -numero;
+     		
+	 }
+	 
+	 while (numero>0){
+	 	int digite = numero % 10;
+	 	reversoN = reversoN * 10 + digite;
+	 	numero /= 10;
+	 	
+	 }
+	
+    
+    if (negativo){
+    	reversoN = -reversoN;
+    	
+	}
+    
+    printf("O número invertido é: %d",reversoN);
+    
+    return 0; 
+}
