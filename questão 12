@@ -1,0 +1,23 @@
+#include <stdio.h> 
+
+
+int main() {
+    	
+	int numero,quantidade, contador,soma=00;
+		
+    printf("Qauntas vezes vc quer repetir o numero: ");
+    scanf("%d", &quantidade);
+    
+    for (contador = 0; contador<quantidade; contador ++){
+	
+    	printf("Digite os numeros: ");
+    	scanf("%d", &numero);
+    	
+    	soma = numero + soma;
+	}
+	
+    	printf("A soma dos numeros e: %d",soma);
+		
+		
+    return 0;
+}
