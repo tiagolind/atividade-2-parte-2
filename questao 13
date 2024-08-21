@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+
+int main() {
+   
+    setlocale(LC_ALL,"Portuguese");
+   
+    int N;
+
+    printf("Digite o número de termos da sequência de Fibonacci: ");
+    scanf("%d", &N);
+
+    if (N <= 0) {
+        printf("O número de termos deve ser maior que zero.\n");
+        return 1; // Retorna 1 para indicar que houve um erro
+    }
+
+    
+    unsigned long long a = 0, b = 1;
+
+    
+    printf("%llu", a);
+
+    if (N > 1) {
+        printf(", %llu", b);
+    }
+
+    for (int i = 2; i < N; ++i) {
+        unsigned long long next = a + b;
+        printf(", %llu", next);
+        a = b;
+        b = next;
+    }
+
+    printf("\n");
+    return 0; 
+}
