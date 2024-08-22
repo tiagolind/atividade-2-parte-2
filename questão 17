@@ -1,0 +1,35 @@
+	#include <stdio.h>
+	#include <stdlib.h>
+	#include <locale.h>
+	
+	int calcularMDC(int a, int b){
+		while (b!= 0){
+			int resto = a %b;
+			a = b;
+			b = resto;
+		}
+		return a;
+	}
+	
+	
+		int main() {
+			
+			setlocale(LC_ALL, "Portuguese");
+			
+		int num1,num2;	
+			
+	    printf("Digite dois números para saber o MDC deles: \n");
+	   
+	    printf("Primeiro número: ");
+	    scanf ("%d", &num1);
+	   
+	    printf("Segundo número: ");
+	    scanf("%d",&num2);
+	    
+	    int mdc = calcularMDC (num1,num2);
+	    
+		printf("\nO MDC de %d e %d é igual: %d.",num1, num2,mdc);
+	   
+	   
+	    return 0;
+	}
