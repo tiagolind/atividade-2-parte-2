@@ -1,0 +1,44 @@
+#include <cstdio>
+#include <cstring>
+#include <cctype>
+#include <stdlib.h>
+#include <locale.h>
+	int main() {
+		
+		setlocale(LC_ALL, "Portuguese");
+		
+    char input[100];
+    
+  	  printf("Digite um número ou palavra: ");
+    	scanf("%99[^\n]", input);  // Lê até 99 caracteres
+    // Calcula o comprimento da string
+    	
+    size_t length = strlen(input);
+    
+    // Converte para minúsculas e remove caracteres não alfanuméricos
+    char entrada[100];
+    size_t cleanedLength = 0;
+    for (size_t i = 0; i < length; ++i) {
+        if (isalnum(input[i])) {
+            entrada[cleanedLength++] = tolower(input[i]);
+        }
+    }
+    entrada[cleanedLength] = '\0';
+    
+    // Verifica se é palíndromo
+    bool isPalindrome = true;
+    for (size_t i = 0; i < cleanedLength / 2; ++i) {
+        if (entrada[i] != entrada[cleanedLength - i - 1]) {
+            isPalindrome = false;
+            break;
+        }
+    }
+    
+    if (isPalindrome) {
+        printf("\"%s\" é um palíndromo.\n", input);
+    } else {
+        printf("\"%s\" não é um palíndromo.\n", input);
+    }
+    
+    return 0;
+}
